@@ -1,0 +1,41 @@
+int z = 2;
+int a;
+a = 55;
+
+int i = 354;
+int b = 1228;
+int c = 19 - 2;
+int d = (1+4)*3;
+
+int e = ((a +z) * 2) - d;
+int f = e + z;
+if(d <= 22){a = a+ 1;}
+else if(d > 20) {a = a - 1;}
+while(a >= 10){
+    a = a / 2;
+    i = i + 15;
+    b = b + 20;
+}
+do {a = a * 3;} while (a < 30);
+
+list l;
+l = l + a;
+z = l # 0;
+
+set k;
+k = k + f;
+bool state;
+state = k # f;
+
+print a;
+print e;
+print state;
+print l;
+print k;
+
+if(c <= 100){}else if(c > 15){}
+
+do{} while (e < 100);
+
+print e;
+print c;

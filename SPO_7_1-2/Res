@@ -1,0 +1,148 @@
+Tree Optimization:
+
+Find empty if
+	Find else
+	Else is empty
+Delete
+[]
+Empty while
+Delete
+[]
+
+Optimized RPN:
+
+[(VAR, z), (VAR_TYPE, int), (NUMBER, 2), (ASSIGN_OP, =), (SEP, ;), (VAR, a), (VAR_TYPE, int), (SEP, ;), (VAR, a),
+(NUMBER, 55), (ASSIGN_OP, =), (SEP, ;), (VAR, c), (VAR_TYPE, int), (NUMBER, 17), (ASSIGN_OP, =), (SEP, ;), (VAR, d),
+(VAR_TYPE, int), (NUMBER, 15), (ASSIGN_OP, =), (SEP, ;), (VAR, e), (VAR_TYPE, int), (VAR, a), (VAR, z), (OP, +),
+(NUMBER, 2), (OP, *), (VAR, d), (OP, -), (ASSIGN_OP, =), (SEP, ;), (VAR, f), (VAR_TYPE, int), (VAR, e), (VAR, z),
+(OP, +), (ASSIGN_OP, =), (SEP, ;), (VAR, d), (NUMBER, 22), (LOGICAL_OP, <=), (NUMBER, 53), (OP, !F), (VAR, a),
+(VAR, a), (NUMBER, 1), (OP, +), (ASSIGN_OP, =), (SEP, ;), (NUMBER, 64), (OP, !!), (VAR, d), (NUMBER, 20),
+(LOGICAL_OP, >), (NUMBER, 64), (OP, !F), (VAR, a), (VAR, a), (NUMBER, 1), (OP, -), (ASSIGN_OP, =), (SEP, ;),
+(VAR, a), (NUMBER, 10), (LOGICAL_OP, >=), (NUMBER, 77), (OP, !F), (VAR, a), (VAR, a), (NUMBER, 2), (OP, /),
+(ASSIGN_OP, =), (SEP, ;), (NUMBER, 64), (OP, !!), (VAR, a), (VAR, a), (NUMBER, 3), (OP, *), (ASSIGN_OP, =),
+(SEP, ;), (VAR, a), (NUMBER, 30), (LOGICAL_OP, <), (NUMBER, 77), (OP, !T), (VAR, l), (VAR_TYPE, list), (SEP, ;),
+(VAR, l), (VAR, l), (VAR, a), (OP, +), (ASSIGN_OP, =), (SEP, ;), (VAR, z), (VAR, l), (NUMBER, 0), (OP, #),
+(ASSIGN_OP, =), (SEP, ;), (VAR, k), (VAR_TYPE, set), (SEP, ;), (VAR, k), (VAR, k), (VAR, f), (OP, +),
+(ASSIGN_OP, =), (SEP, ;), (VAR, state), (VAR_TYPE, bool), (SEP, ;), (VAR, state), (VAR, k), (VAR, f),
+(OP, #), (ASSIGN_OP, =), (SEP, ;), (VAR, a), (PRINT_LK, print), (SEP, ;), (VAR, e), (PRINT_LK, print),
+(SEP, ;), (VAR, state), (PRINT_LK, print), (SEP, ;), (VAR, l), (PRINT_LK, print), (SEP, ;), (VAR, k),
+(PRINT_LK, print), (SEP, ;), (VAR, e), (PRINT_LK, print), (SEP, ;), (VAR, c), (PRINT_LK, print), (SEP, ;)]
+
+
+
+attempt0: ((VAR_TYPE, int), (VAR, z), null)
+attempt1: ((ASSIGN_OP, =), (TRIAD, 0), (NUMBER, 2))
+attempt2: ((SEP, ;), null, null)
+attempt3: ((VAR_TYPE, int), (VAR, a), null)
+attempt4: ((SEP, ;), null, null)
+attempt5: ((ASSIGN_OP, =), (VAR, a), (NUMBER, 55))
+attempt6: ((SEP, ;), null, null)
+attempt7: ((VAR_TYPE, int), (VAR, c), null)
+attempt8: ((ASSIGN_OP, =), (TRIAD, 7), (NUMBER, 17))
+attempt9: ((SEP, ;), null, null)
+attempt10: ((VAR_TYPE, int), (VAR, d), null)
+attempt11: ((ASSIGN_OP, =), (TRIAD, 10), (NUMBER, 15))
+attempt12: ((SEP, ;), null, null)
+attempt13: ((VAR_TYPE, int), (VAR, e), null)
+attempt14: ((OP, +), (VAR, a), (VAR, z))
+attempt15: ((OP, *), (TRIAD, 14), (NUMBER, 2))
+attempt16: ((OP, -), (TRIAD, 15), (VAR, d))
+attempt17: ((ASSIGN_OP, =), (TRIAD, 13), (TRIAD, 16))
+attempt18: ((SEP, ;), null, null)
+attempt19: ((VAR_TYPE, int), (VAR, f), null)
+attempt20: ((OP, +), (VAR, e), (VAR, z))
+attempt21: ((ASSIGN_OP, =), (TRIAD, 19), (TRIAD, 20))
+attempt22: ((SEP, ;), null, null)
+attempt23: ((LOGICAL_OP, <=), (VAR, d), (NUMBER, 22))
+attempt24: ((OP, !F), (TRIAD, 23), (TRIAD, 29))
+attempt25: ((OP, +), (VAR, a), (NUMBER, 1))
+attempt26: ((ASSIGN_OP, =), (VAR, a), (TRIAD, 25))
+attempt27: ((SEP, ;), null, null)
+attempt28: ((OP, !!), (TRIAD, 34), null)
+attempt29: ((LOGICAL_OP, >), (VAR, d), (NUMBER, 20))
+attempt30: ((OP, !F), (TRIAD, 29), (TRIAD, 34))
+attempt31: ((OP, -), (VAR, a), (NUMBER, 1))
+attempt32: ((ASSIGN_OP, =), (VAR, a), (TRIAD, 31))
+attempt33: ((SEP, ;), null, null)
+attempt34: ((LOGICAL_OP, >=), (VAR, a), (NUMBER, 10))
+attempt35: ((OP, !F), (TRIAD, 34), (TRIAD, 40))
+attempt36: ((OP, /), (VAR, a), (NUMBER, 2))
+attempt37: ((ASSIGN_OP, =), (VAR, a), (TRIAD, 36))
+attempt38: ((SEP, ;), null, null)
+attempt39: ((OP, !!), (TRIAD, 34), null)
+attempt40: ((OP, *), (VAR, a), (NUMBER, 3))
+attempt41: ((ASSIGN_OP, =), (VAR, a), (TRIAD, 40))
+attempt42: ((SEP, ;), null, null)
+attempt43: ((LOGICAL_OP, <), (VAR, a), (NUMBER, 30))
+attempt44: ((OP, !T), (TRIAD, 43), (TRIAD, 40))
+attempt45: ((VAR_TYPE, list), (VAR, l), null)
+attempt46: ((SEP, ;), null, null)
+attempt47: ((OP, +), (VAR, l), (VAR, a))
+attempt48: ((ASSIGN_OP, =), (VAR, l), (TRIAD, 47))
+attempt49: ((SEP, ;), null, null)
+attempt50: ((OP, #), (VAR, l), (NUMBER, 0))
+attempt51: ((ASSIGN_OP, =), (VAR, z), (TRIAD, 50))
+attempt52: ((SEP, ;), null, null)
+attempt53: ((VAR_TYPE, set), (VAR, k), null)
+attempt54: ((SEP, ;), null, null)
+attempt55: ((OP, +), (VAR, k), (VAR, f))
+attempt56: ((ASSIGN_OP, =), (VAR, k), (TRIAD, 55))
+attempt57: ((SEP, ;), null, null)
+attempt58: ((VAR_TYPE, bool), (VAR, state), null)
+attempt59: ((SEP, ;), null, null)
+attempt60: ((OP, #), (VAR, k), (VAR, f))
+attempt61: ((ASSIGN_OP, =), (VAR, state), (TRIAD, 60))
+attempt62: ((SEP, ;), null, null)
+attempt63: ((PRINT_LK, print), (VAR, a), null)
+attempt64: ((SEP, ;), null, null)
+attempt65: ((PRINT_LK, print), (VAR, e), null)
+attempt66: ((SEP, ;), null, null)
+attempt67: ((PRINT_LK, print), (VAR, state), null)
+attempt68: ((SEP, ;), null, null)
+attempt69: ((PRINT_LK, print), (VAR, l), null)
+attempt70: ((SEP, ;), null, null)
+attempt71: ((PRINT_LK, print), (VAR, k), null)
+attempt72: ((SEP, ;), null, null)
+attempt73: ((PRINT_LK, print), (VAR, e), null)
+attempt74: ((SEP, ;), null, null)
+attempt75: ((PRINT_LK, print), (VAR, c), null)
+attempt76: ((SEP, ;), null, null)
+
+
+
+
+
+attempt0: ((VAR_TYPE, int), (VAR, z), null)
+attempt1: ((ASSIGN_OP, =), (TRIAD, 0), (NUMBER, 2))
+attempt2: ((SEP, ;), null, null)
+
+(VAR, z), ((VAR_TYPE, int), (NUMBER, 2), (ASSIGN_OP, =), (SEP, ;)
+
+
+attempt5: ((ASSIGN_OP, =), (VAR, a), (NUMBER, 55))
+attempt6: ((SEP, ;), null, null)
+
+(VAR, а), (NUMBER, 55), (ASSIGN_OP, =), (SEP, ;)
+
+
+attempt10: ((VAR_TYPE, int), (VAR, d), null)
+attempt11: ((ASSIGN_OP, =), (TRIAD, 10), (NUMBER, 15))
+attempt12: ((SEP, ;), null, null)
+
+(VAR, d), (VAR_TYPE, int), (NUMBER, 15), (ASSIGN_OP, =), (SEP, ;),
+
+
+attempt25: ((OP, +), (VAR, a), (NUMBER, 1))
+attempt26: ((ASSIGN_OP, =), (VAR, a), (TRIAD, 25))
+attempt27: ((SEP, ;), null, null)
+
+(VAR, а), (VAR, а), (NUMBER, 1), (OP, +), (ASSIGN_OP, =), (SEP, ;)
+
+
+a: 63
+e: 99
+state: true
+l: [63 ]
+k: [101]
+e: 99
+c: 17
